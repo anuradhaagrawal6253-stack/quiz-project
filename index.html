@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Quiz</title>
+</head>
+<body>
+<h2>Simple Quiz</h2>
+
+<p>1. What is the capital of India?</p>
+
+<input type="radio" name="q1" value="a"> Mumbai<br>
+<input type="radio" name="q1" value="b"> Delhi<br>
+<input type="radio" name="q1" value="c"> Chennai<br>
+
+<p>2. Which language is platform independent?</p>
+
+<input type="radio" name="q2" value="a"> C<br>
+<input type="radio" name="q2" value="b"> C++<br>
+<input type="radio" name="q2" value="c"> Java<br>
+
+<br>
+<button onclick="checkAnswers()">Submit</button>
+
+<h3 id="result"></h3>
+
+<script>
+function checkAnswers() {
+    let score = 0;
+
+    let q1 = document.querySelector('input[name="q1"]:checked');
+    let q2 = document.querySelector('input[name="q2"]:checked');
+
+    if (q1 && q1.value === "b") {
+        score++;
+    }
+
+    if (q2 && q2.value === "c") {
+        score++;
+    }
+
+    document.getElementById("result").innerHTML =
+        "Your Score: " + score + "/2";
+}
+</script>
+
+
+</body>
+</html>
